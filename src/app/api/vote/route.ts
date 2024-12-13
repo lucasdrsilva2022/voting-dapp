@@ -64,7 +64,10 @@ export async function POST(request :Request) {
   
   
   const response = await createPostResponse({
-   fields: {},
+   fields: {
+    // @ts-ignore
+    transaction: transaction
+   },
   });
 
   return Response.json(response, { headers: ACTIONS_CORS_HEADERS });
